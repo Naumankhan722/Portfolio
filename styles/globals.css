@@ -1,0 +1,18 @@
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+}
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: #0b5fff; text-decoration: none }
