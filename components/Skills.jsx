@@ -8,12 +8,12 @@ export default function Skills() {
     return (
         <GlassCard>
             <h2 style={{ fontSize: 24, marginBottom: 24 }}>Technical Skills</h2>
-            <div style={{ display: 'flex', flexDirection: 'row', gap: 8 }}>
-                <div style={{ width: '49%', display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                         <h4 style={{ fontSize: 16, marginBottom: 0 }}>Frontend</h4>
                         <p style={{ alignItems: 'left', marginTop: 0 }}>
-                            <img height={48} src="https://skillicons.dev/icons?i=html,js,ts,react,vue,nextjs" alt="Frontend" />
+                            <img height={48} src="https://skillicons.dev/icons?i=html,js,ts,react,nextjs" alt="Frontend" />
                             <img height={48} src="https://skillicons.dev/icons?i=css,tailwind,materialui,sass" alt="Frontend" />
                         </p>
                     </div>
@@ -48,7 +48,7 @@ export default function Skills() {
                         </p>
                     </div>
                 </div>
-                <div style={{ width: '49%', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
                     {Object.entries(resume.skills).map(([category, skills]) => (
                         <div key={category} style={{
                             background: COLORS.CARD_BG,

@@ -33,7 +33,7 @@ export default function Sidebar({ items = [] }) {
   }
 
   return (
-    <nav aria-label="Section navigation" style={navStyle}>
+    <nav aria-label="Section navigation" className='sideNav' style={navStyle}>
       <GlassCard>
         <ul style={ulStyle}>
           {items.map((item) => {

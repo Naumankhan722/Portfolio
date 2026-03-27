@@ -13,8 +13,8 @@ export default function Home() {
   const navItems = [
     { id: 'hero', label: 'Home' },
     { id: 'summary', label: 'Summary' },
-    { id: 'experience', label: 'Experience' },
     { id: 'skills', label: 'Skills' },
+    { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'education', label: 'Education' },
     // { id: 'github', label: 'GitHub Profile' }
@@ -29,11 +29,11 @@ export default function Home() {
           <div id="summary" style={{ paddingTop: 36 }}>
             <Summary />
           </div>
-          <div id="experience" style={{ paddingTop: 36 }}>
-            <Experience />
-          </div>
           <div id="skills" style={{ paddingTop: 36 }}>
             <Skills />
+          </div>
+          <div id="experience" style={{ paddingTop: 36 }}>
+            <Experience />
           </div>
           <div id="projects" style={{ paddingTop: 36 }}>
             <Projects />
