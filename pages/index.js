@@ -7,6 +7,7 @@ import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import Education from '../components/Education'
 import GithubProfile from '../components/GithubProfile'
+import ImageScrubber from '../components/ImageScrubber'
 import { COLORS } from '../styles/colors'
 
 export default function Home() {
@@ -21,11 +22,25 @@ export default function Home() {
   ]
 
   return (
-    <div style={{ fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Arial', padding: 24, minHeight: '100vh', color: COLORS.TEXT_PRIMARY }}>
+    <div style={{ fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, Arial', padding: 24, minHeight: '100vh', color: COLORS.TEXT_PRIMARY, position: 'relative' }}>
+      <ImageScrubber />
       <div style={{ display: 'flex', gap: 24, maxWidth: 1200, margin: '0 auto' }}>
         <Sidebar items={navItems} />
         <main style={{ flex: 1, paddingBottom: 64 }}>
           <Hero />
+          {/* <div id="video" style={{ paddingTop: 36, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: 36 }}>
+            <div style={{ background: COLORS.ACCENT_PRIMARY, borderRadius: '18px' }}>
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{ width: '200px', mixBlendMode: 'screen' }}
+              >
+                <source src="/assets/videos/react-animate.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div> */}
           <div id="summary" style={{ paddingTop: 36 }}>
             <Summary />
           </div>

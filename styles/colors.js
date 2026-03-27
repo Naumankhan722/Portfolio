@@ -12,14 +12,14 @@ export const COLORS = {
 
   // --- Surface (Glass cards, borders, shadows) ---
   // Transparent white for the glass effect allowing the vibrant rainbow to organically peek through
-  CARD_BG: 'rgba(255, 255, 255, 0.4)',
+  CARD_BG: 'rgba(255, 255, 255, 0.2)',
   // A slightly more opaque white to provide boundary definition to glass cards without being harsh
   CARD_BORDER: 'rgba(255, 255, 255, 0.6)',
   // A subtle low-opacity border for separators and lines against glass
   BORDER_LIGHT: 'rgba(0, 0, 0, 0.1)',
   // A very soft, low-opacity Indigo-slate shadow for integrated depth (avoids muddy black tones)
   SOFT_SHADOW: 'rgba(100, 116, 139, 0.1)',
-  
+
   // --- Content (Text colors) ---
   // Deep Slate for high contrast on light/colorful backgrounds (meets WCAG AA)
   TEXT_PRIMARY: '#1e293b',
@@ -37,7 +37,7 @@ export const COLORS = {
   ACCENT_TEAL_BORDER: 'rgba(13, 148, 136, 0.25)',
   // Muted Rose: For warnings or special highlights where red is too aggressive
   ACCENT_ROSE: '#e11d48',
-  
+
   // --- Window Control Dots ---
   MAC_RED: '#fb7185', // Soft Rose
   MAC_YELLOW: '#fbbf24', // Warm Amber
