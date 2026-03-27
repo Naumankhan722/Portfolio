@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
+import { COLORS } from '../styles/colors'
 
 export default function BlurUpImage({ src, alt = '', width = 600, height = 360, style = {}, className = '' }) {
   const ref = useRef(null)
@@ -35,7 +36,7 @@ export default function BlurUpImage({ src, alt = '', width = 600, height = 360, 
     position: 'relative',
     overflow: 'hidden',
     borderRadius: 8,
-    backgroundColor: '#0b0f14'
+    backgroundColor: COLORS.TEXT_PRIMARY
   }, style)
 
   const placeholderStyle = {
@@ -58,7 +59,7 @@ export default function BlurUpImage({ src, alt = '', width = 600, height = 360, 
   }
 
   // Generate a tiny blurred placeholder using a very small inline SVG gradient — lightweight fallback.
-  const blurPlaceholder = `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><rect width='100%' height='100%' fill='%230b0f14'/></svg>`
+  const blurPlaceholder = `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><rect width='100%' height='100%' fill='${encodeURIComponent(COLORS.TEXT_PRIMARY)}'/></svg>`
 
   return (
     <div ref={ref} className={className} style={wrapperStyle} aria-hidden={alt ? 'false' : 'true'}>
