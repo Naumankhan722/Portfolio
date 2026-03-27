@@ -30,6 +30,12 @@ export default function Skills() {
                         </p>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                        <h4 style={{ fontSize: 16, marginBottom: 0 }}>Tools</h4>
+                        <p style={{ alignItems: 'left', marginTop: 0 }}>
+                            <img height={48} src="https://skillicons.dev/icons?i=git,github,gitlab,vscode,postman" alt="Tools" />
+                        </p>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                         <h4 style={{ fontSize: 16, marginBottom: 0 }}>DevOps</h4>
                         <p style={{ alignItems: 'left', marginTop: 0 }}>
                             <img height={48} src="https://skillicons.dev/icons?i=docker,nginx,aws" alt="DevOps" />
@@ -39,12 +45,6 @@ export default function Skills() {
                         <h4 style={{ fontSize: 16, marginBottom: 0 }}>Operating Systems</h4>
                         <p style={{ alignItems: 'left', marginTop: 0 }}>
                             <img height={48} src="https://skillicons.dev/icons?i=windows,ubuntu" alt="Operating Systems" />
-                        </p>
-                    </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                        <h4 style={{ fontSize: 16, marginBottom: 0 }}>Tools</h4>
-                        <p style={{ alignItems: 'left', marginTop: 0 }}>
-                            <img height={48} src="https://skillicons.dev/icons?i=git,github,gitlab,vscode,postman" alt="Tools" />
                         </p>
                     </div>
                 </div>

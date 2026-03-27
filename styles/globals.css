@@ -16,3 +16,18 @@ body {
 }
 
 a { color: #0b5fff; text-decoration: none }
+
+@keyframes waveGradient {
+  0% {
+    background-position: 0% 0%;
+    filter: brightness(1);
+  }
+  50% {
+    background-position: 100% 100%;
+    filter: brightness(0.9);
+  }
+  100% {
+    background-position: 0% 0%;
+    filter: brightness(1);
+  }
+}

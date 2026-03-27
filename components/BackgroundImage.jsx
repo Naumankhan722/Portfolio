@@ -5,10 +5,11 @@ export default function BackgroundImage({ children }) {
         left: 0,
         width: '100vw',
         height: '100vh',
-        objectFit: 'cover',
         opacity: 0.8,
         zIndex: -1,
-        backgroundImage: 'linear-gradient(185deg, #9fcff9 0%, #C6E4EE 40%, #FED1AE 60%, #FAA0B9 70%, #CB7DCB 80%, #757ECB 100%)'
+        backgroundImage: 'linear-gradient(185deg, #9fcff9, #C6E4EE, #FED1AE, #FAA0B9, #CB7DCB, #757ECB)',
+        backgroundSize: '400% 400%',
+        animation: 'waveGradient 12s ease-in-out infinite'
     }
 
 
