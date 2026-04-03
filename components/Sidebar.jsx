@@ -51,6 +51,20 @@ export default function Sidebar({ items = [] }) {
               </li>
             )
           })}
+          <li>
+            <div>
+              <a href='https://mail.google.com/mail/?view=cm&fs=1&to=naumanpathan722@gmail.com' style={{
+                display: 'inline-block',
+                padding: '6px 8px',
+                borderRadius: 12,
+                color: COLORS.TEXT_PRIMARY,
+                backgroundColor: COLORS.ACCENT_PRIMARY,
+                fontWeight: 600,
+                textDecoration: 'none',
+                cursor: 'pointer'
+              }} target='_blank' rel='noopener noreferrer'>Contact</a>
+            </div>
+          </li>
         </ul>
       </GlassCard>
     </nav>

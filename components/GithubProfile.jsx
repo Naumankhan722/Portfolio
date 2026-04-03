@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import GlassCard from './GlassCard';
+import PretextParagraph from './PretextParagraph';
 import { COLORS } from '../styles/colors';
 
 export default function GithubProfile() {
@@ -53,11 +54,22 @@ export default function GithubProfile() {
                     }
                 `}} />
                 {content ? (
-                    <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                    <ReactMarkdown 
+                        rehypePlugins={[rehypeRaw]}
+                        components={{
+                            p: ({node, children, ...props}) => {
+                                const textArr = React.Children.toArray(children);
+                                if (textArr.length > 0 && textArr.every(child => typeof child === 'string')) {
+                                    return <PretextParagraph text={textArr.join('')} fontSize={15} lineHeight={24} color={COLORS.TEXT_SECONDARY} style={{ marginBottom: 16 }} />;
+                                }
+                                return <p {...props}>{children}</p>;
+                            }
+                        }}
+                    >
                         {content}
                     </ReactMarkdown>
                 ) : (
-                    <p style={{ textAlign: 'center', color: COLORS.TEXT_MUTED }}>Loading GitHub Profile...</p>
+                    <PretextParagraph text="Loading GitHub Profile..." fontSize={15} lineHeight={24} color={COLORS.TEXT_MUTED} style={{ textAlign: 'center' }} />
                 )}
             </div>
         </GlassCard>

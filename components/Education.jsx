@@ -1,6 +1,7 @@
 
 import React from 'react'
 import GlassCard from './GlassCard'
+import PretextParagraph from './PretextParagraph'
 import { resume } from '../data/resume'
 import { COLORS } from '../styles/colors'
 
@@ -12,8 +13,8 @@ export default function Education() {
                 {resume.education.map((edu, index) => (
                     <div key={index} style={{ borderBottom: `1px solid ${COLORS.CARD_BG}`, paddingBottom: 16 }}>
                         <h3 style={{ fontSize: 18, marginBottom: 8, color: COLORS.TEXT_PRIMARY }}>{edu.degree}</h3>
-                        <p style={{ fontSize: 16, color: COLORS.ACCENT_PRIMARY, marginBottom: 4 }}>{edu.institution}</p>
-                        <p style={{ fontSize: 14, color: COLORS.TEXT_MUTED, marginBottom: 0 }}>{edu.year} | {edu.location}</p>
+                        <PretextParagraph text={edu.institution} fontSize={16} lineHeight={24} color={COLORS.ACCENT_PRIMARY} style={{ marginBottom: 4 }} />
+                        <PretextParagraph text={`${edu.year} | ${edu.location}`} fontSize={14} lineHeight={20} color={COLORS.TEXT_MUTED} style={{ marginBottom: 0 }} />
                     </div>
                 ))}
             </div>

@@ -1,6 +1,7 @@
 
 import React from 'react'
 import GlassCard from './GlassCard'
+import PretextParagraph from './PretextParagraph'
 import { resume } from '../data/resume'
 import { COLORS } from '../styles/colors'
 
@@ -19,8 +20,8 @@ export default function Experience() {
                         </div>
                         <ul style={{ paddingLeft: 20, margin: 0, color: COLORS.TEXT_SECONDARY }}>
                             {job.achievements.map((achievement, i) => (
-                                <li key={i} style={{ marginBottom: 8, fontSize: 15, lineHeight: 1.5 }}>
-                                    {achievement}
+                                <li key={i} style={{ marginBottom: 8 }}>
+                                    <PretextParagraph text={achievement} fontSize={15} lineHeight={24} />
                                 </li>
                             ))}
                         </ul>

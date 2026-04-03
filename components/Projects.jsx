@@ -1,29 +1,23 @@
 import React from 'react';
 import GlassCard from './GlassCard';
 import { resume } from '../data/resume';
-import { COLORS } from '../styles/colors'
+import { COLORS } from '../styles/colors';
+import PretextParagraph from './PretextParagraph';
 
 export default function Projects() {
   return (
-    <GlassCard>
-      <h2 style={{ fontSize: 24, marginBottom: 24 }}>Key Projects</h2>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: 16,
-        }}
-      >
-        {resume.projects.map((project, index) => (
-          <div
-            key={index}
-            style={{
-              background: COLORS.CARD_BG,
-              borderRadius: 8,
-              height: '100%',
-              display: 'flex',
-            }}
-          >
+    <>
+      <GlassCard >
+        <h2 style={{ fontSize: 24, marginBottom: 24 }}>Key Projects</h2>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 16,
+          }}
+        >
+          {resume.projects.map((project, index) => (
+            // <ScrollItem id={index} key={index}>
             <div
               style={{
                 padding: 24,
@@ -32,19 +26,17 @@ export default function Projects() {
                 flexDirection: 'column',
               }}
             >
-              <h3 style={{ fontSize: 18, marginBottom: 8, color: COLORS.ACCENT_PRIMARY }}>
+              <h3 style={{ fontSize: 18, marginBottom: 8, color: COLORS.TEXT_PRIMARY }}>
                 {project.title}
               </h3>
-              <p style={{ fontSize: 14, color: COLORS.TEXT_SECONDARY, marginBottom: 16 }}>
-                {project.description}
-              </p>
+              <PretextParagraph text={project.description} fontSize={14} color={COLORS.ACCENT_PRIMARY} style={{ marginBottom: 16 }} />
               <div style={{ flex: 1 }}>
                 <ul
                   style={{ paddingLeft: 20, marginBottom: 16, color: COLORS.TEXT_SECONDARY }}
                 >
                   {project.achievements.map((achievement, i) => (
-                    <li key={i} style={{ fontSize: 13, marginBottom: 6 }}>
-                      {achievement}
+                    <li key={i} style={{ marginBottom: 6 }}>
+                      <PretextParagraph text={achievement} fontSize={13} lineHeight={20} />
                     </li>
                   ))}
                 </ul>
@@ -74,9 +66,10 @@ export default function Projects() {
                 ))}
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </GlassCard>
+            // </ScrollItem> 
+          ))}
+        </div>
+      </GlassCard>
+    </>
   );
 }
