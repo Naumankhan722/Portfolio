@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors */
+  --color-background: #0A0A0A;
+  --color-foreground: #E5E2E1;
+  --color-surface: #131313;
+  --color-surface-dim: #131313;
+  --color-surface-bright: #3a3939;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container: #201f1f;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353534;
+  --color-surface-variant: #353534;
+  --color-surface-tint: #b9c3ff;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #c4c5da;
+
+  --color-primary: #b9c3ff;
+  --color-primary-container: #0047ff;
+  --color-primary-fixed: #dde1ff;
+  --color-primary-fixed-dim: #b9c3ff;
+  --color-on-primary: #00228a;
+  --color-on-primary-container: #d4d9ff;
+  --color-on-primary-fixed: #001257;
+  --color-on-primary-fixed-variant: #0033c0;
+  --color-inverse-primary: #0046fa;
+
+  --color-secondary: #c8c6c5;
+  --color-secondary-container: #474746;
+  --color-secondary-fixed: #e5e2e1;
+  --color-secondary-fixed-dim: #c8c6c5;
+  --color-on-secondary: #303030;
+  --color-on-secondary-container: #b7b5b4;
+  --color-on-secondary-fixed: #1b1c1c;
+  --color-on-secondary-fixed-variant: #474746;
+
+  --color-tertiary: #c6c6c7;
+  --color-tertiary-container: #5f6061;
+  --color-tertiary-fixed: #e2e2e2;
+  --color-tertiary-fixed-dim: #c6c6c7;
+  --color-on-tertiary: #2f3131;
+  --color-on-tertiary-container: #dbdbdb;
+  --color-on-tertiary-fixed: #1a1c1c;
+  --color-on-tertiary-fixed-variant: #454747;
+
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  --color-on-error: #690005;
+  --color-on-error-container: #ffdad6;
+
+  --color-outline: #8e8fa3;
+  --color-outline-variant: #434657;
+
+  --color-inverse-surface: #e5e2e1;
+  --color-inverse-on-surface: #313030;
+  --color-on-background: #e5e2e1;
+
+  /* Border Radius */
+  --radius: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+
+  /* Font Families */
+  --font-headline: "Inter Tight", Inter, sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+  --font-label: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Google Fonts loaded via <link> tags in layout.tsx */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0A0A;
+  color: #E5E2E1;
+  font-family: "Space Grotesk", sans-serif;
+  overflow: hidden;
+  /* Hide body scroll, main will handle scrolling */
+}
+
+.snap-container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0047FF;
+}
+
+/* Globe effects */
+.globe-glow {
+  box-shadow: 0 0 100px 20px rgba(0, 71, 255, 0.15);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Globe rotation */
+@keyframes globe-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.globe-rotate-anim {
+  animation: globe-rotate 60s linear infinite;
+}
+
+/* Section transitions */
+.section-content {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease;
+}
+
+@supports (view-timeline: --section) {
+  section {
+    view-timeline-name: --section;
+    view-timeline-axis: block;
+  }
+
+  .hero-visual {
+    animation: shrink-and-dissolve linear both;
+    animation-timeline: --section;
+    animation-range: exit 0% exit 100%;
+  }
+}
+
+@keyframes shrink-and-dissolve {
+  to {
+    transform: translateY(-200%);
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+
+/* Pulse animation for green dot */
+@keyframes pulse-dot {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
