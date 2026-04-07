@@ -22,11 +22,11 @@ export default function CredentialsSection() {
             <div className="mt-4 flex gap-4">
               <div className="bg-surface-container-low p-4 border border-white/5">
                 <span className="font-mono text-[10px] text-outline block mb-1">CGPA</span>
-                <span className="text-2xl font-black text-primary-container">7.00</span>
+                <span className="text-2xl font-black text-primary-container">7.45</span>
               </div>
               <div className="bg-surface-container-low p-4 border border-white/5">
                 <span className="font-mono text-[10px] text-outline block mb-1">HONORS</span>
-                <span className="text-xs font-bold text-on-surface uppercase">First Class</span>
+                <span className="text-xs font-bold text-on-surface uppercase">First Class with Distinction</span>
               </div>
             </div>
             <p className="mt-6 text-outline text-sm max-w-sm">
